@@ -79,14 +79,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-#production:
-#  <<: *default
-#  database: achieve_production
-#  username: achieve
-#  password: <%= ENV['ACHIEVE_DATABASE_PASSWORD'] %>
-
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  adapter: pg
-  database: db/production.pg
+  <<: *default
+  database: achieve_production
+  username: achieve
+  password: <%= ENV['ACHIEVE_DATABASE_PASSWORD'] %>
