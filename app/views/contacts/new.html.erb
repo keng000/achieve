@@ -1,7 +1,7 @@
 <div class='container'>
   <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
     <%= notice %>
-    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    
       <h1>お問い合わせ</h1>
       <%= form_for(@contacts, url: confirm_contacts_path) do |f| %>
         <% if @contacts.errors.any? %>
@@ -27,6 +27,5 @@
         <br>
         <%= f.submit '投稿', class: 'btn btn-primary btn-block'%>
       <% end %>
-    </div>
   </div>
 </div>
