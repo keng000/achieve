@@ -3,22 +3,24 @@
 </div>
 
     <section class="main-header">
-        <p class="flash"><%= notice %><%= alert %></p>
+        <font size="5"><p class="flash"><%= notice %><%= alert %></p></font>
         <img src="<%= asset_path "achieve.png" %>">
     </section>
-    
-    <section class='about'>
-        <p>こんにちは。</br>
-        今日からDiveIntoCodeの講習が始まるよ！
-        </p>
-        <p>9/2まで頑張ろう
-    </p>
-    </section>
 
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+      <section class='about'>
+          <h1><p>こんにちは。</br></h1>
+          今日からDiveIntoCodeの講習が始まるよ！
+          </p>
+          <p>9/2まで頑張ろう
+      </p>
+      </section>
 
-    <h2 class='man'>男の子</h2>
-    <h2 class='woman'>女の子</h2>
-    
+      <h2 class='man'>男の子</h2>
+      <h2 class='woman'>女の子</h2>
+    </div>
+  </div>
     <section class="function container-fluid">
         <div class="row">
             <h2>Function</h2>
@@ -29,16 +31,16 @@
                     <p>ログイン機能</p>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6"> 
-                    <div class="function-image">    
-                    <img src="<%= asset_path "mails.png" %>"> 
+                <div class="col-md-3 col-sm-6">
+                    <div class="function-image">
+                    <img src="<%= asset_path "mails.png" %>">
                     <p>メール送信機能</p>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">  
+                <div class="col-md-3 col-sm-6">
                     <div class="function-image">
                         <img src="<%= asset_path "girls.png" %>">
-                        <p>友達つながり機能</p> 
+                        <p>友達つながり機能</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">

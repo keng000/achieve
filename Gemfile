@@ -53,3 +53,5 @@ end
 gem 'therubyracer', platforms: :ruby
 gem 'rails_admin'
 gem 'cancan'
+gem 'pry-rails'
+gem 'better_errors'
