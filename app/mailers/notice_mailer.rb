@@ -12,5 +12,5 @@ class NoticeMailer < ApplicationMailer
 
     mail to: "s_flashback@yahoo.co.jp",
       subject: "【Achieve】ブログが投稿されました"
+    end
   end
-end
