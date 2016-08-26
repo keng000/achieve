@@ -14,3 +14,4 @@ class NoticeMailer < ApplicationMailer
       subject: "【Achieve】ブログが投稿されました"
     end
   end
+end
