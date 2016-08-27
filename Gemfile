@@ -49,9 +49,13 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 group :development do
   gem 'letter_opener'
+  gem 'dotenv-rails'
 end
 gem 'therubyracer', platforms: :ruby
 gem 'rails_admin'
 gem 'cancan'
 gem 'pry-rails'
 gem 'better_errors'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
