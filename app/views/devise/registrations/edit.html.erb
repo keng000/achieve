@@ -17,10 +17,12 @@
   </div>
   <br>
   <br>
+  
+<% if @user.provider.blank? %>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+  
   <div class="field">
     <%= f.label :'新しいパスワード' %> <br>
     <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder:'パスワード' %>
@@ -41,6 +43,17 @@
     <%= f.password_field :'現在のパスワード', autocomplete: "off",class: "form-control", placeholder:'現在のパスワード' %>
   </div>
   <br>
+<% end %>
+  <p>
+  <font size='3'><strong>プロフィール画像を変更する</strong></font>
+  <div class="field">
+    <%= profile_img(@user) if profile_img(@user) %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </div>
+  </p>
+  <br>
+  
   <div class="actions">
     <%= f.submit "Update",class: "btn btn-primary btn-block" %>
   </div>
