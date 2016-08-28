@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable
   
+  has_many :blogs
+  
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(provider: auth.provider, uid: auth.uid).first
 
@@ -28,7 +30,7 @@ class User < ActiveRecord::Base
     user = User.where(provider: auth.provider, uid: auth.uid).first
 
     unless user
-      user = User.new(
+      user = User.create(
           name:     auth.info.nickname,
           image_url: auth.info.image,
           provider: auth.provider,
