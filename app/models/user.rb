@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
     user = User.where(provider: auth.provider, uid: auth.uid).first
 
     unless user
-      user = User.create(
+      user = User.new(
           name:     auth.info.nickname,
           image_url: auth.info.image,
           provider: auth.provider,
