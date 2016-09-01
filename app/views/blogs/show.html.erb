@@ -18,8 +18,8 @@
     <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
     <br>
     <% if current_user.id == @blog.user_id %>
-      <center><%= link_to '編集', edit_blog_path(@blog), class: 'btn btn-info' %></center> |
+      <%= link_to '編集', edit_blog_path(@blog), class: 'btn btn-info btn-block' %> |
     <% end %>
-    <center><%= link_to '戻る', blogs_path, class: 'btn btn-default' %></center>
+      <%= link_to '戻る', blogs_path, class: 'btn btn-default btn-block' %>
   </div>
 </div>
