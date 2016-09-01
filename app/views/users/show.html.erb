@@ -1,0 +1,29 @@
+<div class='container'>
+  <div class='col-md-3 col-md-offset-1 col-sm-2 col-sm-offset-1'>
+    <h2><%= @user.name + "の詳細"%></h2>
+    <%= profile_img(@user) %><br>
+    <br>
+    <%= link_to "ユーザー一覧に戻る", users_path , class: 'btn btn-default'%>
+  </div>
+
+  <div class='user-lineup col-md-7 col-sm-8'>
+    <h3><%= "・" + @user.name + "がフォローしてるユーザー(フォロー)" %></h3>
+      <% @followed.each do |followed| %>
+        <div class='follow'>
+          <%= profile_img(followed) %><br>
+          <%= "名前：" + followed.name %><br>
+          <%= "メールアドレス：" + followed.email %><br>
+          <br>
+        </div>
+      <% end %>
+      <br>
+    <h3><%= "・" + @user.name + "をフォローしてるユーザー(フォロワー)" %></h3>
+      <% @follower.each do |follower| %>
+      <div class='follow'>
+        <%= profile_img(follower) %><br>
+        <%= "名前：" + follower.name %><br>
+        <%= "メールアドレス：" + follower.email %><br>
+      </div>
+      <% end %>
+  </div>
+</div>

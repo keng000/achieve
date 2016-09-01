@@ -1,3 +1,14 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.follow{
+  border-bottom: 1px solid #ccc;
+  padding: 20px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.user-lineup{
+  margin: 10px auto;
+  padding-bottom: 60px;
+}
