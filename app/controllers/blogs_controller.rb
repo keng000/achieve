@@ -1,10 +1,16 @@
 class BlogsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_blog, only: [:edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def index
     @blogs = Blog.all
     @user = User.all
+  end
+
+  def show
+    @comments = @blog.comments
+    @comment = @blog.comments.build
+
   end
 
   def new
@@ -33,7 +39,6 @@ class BlogsController < ApplicationController
   def update
     set_blog
     if @blog.update(blogs_params)
-      @blog.update(blogs_params)
       redirect_to blogs_path, notice: 'ブログを編集しました'
     else
       render action: 'edit'
