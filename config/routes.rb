@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   resources :tasks
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -27,6 +26,14 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :users, only: [:index, :show, :edit, :update] do
     resources :tasks
+    resources :submit_requests , shallow: true do
+      get 'approve'
+      get 'unapprove'
+      get 'reject'
+      collection do
+        get 'inbox'
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
