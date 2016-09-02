@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :tasks
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -34,6 +35,10 @@ Rails.application.routes.draw do
         get 'inbox'
       end
     end
+  end
+
+  resources :conversations do
+    resources :messages
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
