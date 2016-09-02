@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :tasks
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :blogs do
@@ -23,8 +24,10 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  resources :users, only: [:index, :show]
   resources :relationships, only: [:create, :destroy]
+  resources :users, only: [:index, :show, :edit, :update] do
+    resources :tasks
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
